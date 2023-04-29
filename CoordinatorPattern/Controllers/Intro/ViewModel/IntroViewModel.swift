@@ -8,5 +8,12 @@
 import Foundation
 
 class IntroViewModel: BaseViewModel {
-    
+   
+    private var provider : IntroProviding = Resolver.shared.resolve(IntroProviding.self)
+    var isNextView : Bool
+    override init() {
+        isNextView = provider.isNextViewState
+       
+    }
 }
+
