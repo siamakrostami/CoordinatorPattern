@@ -80,10 +80,10 @@ final class BaseCoordinator: NSObject, UIViewControllerTransitioningDelegate {
             to.addChildViewController(controller, toContainerView: to.view)
         case .removeChild(let controller):
             controller.removeViewControllerFromParentViewController()
-        case .halfView(let controller):
+        case .halfView(let TransitioningDelegate):
             let slideVC = OverlayView()
             slideVC.modalPresentationStyle = .custom
-            slideVC.transitioningDelegate = controller
+            slideVC.transitioningDelegate = TransitioningDelegate
             self.navigationController.topViewController?.present(slideVC, animated: true, completion: nil)
         }
     }
