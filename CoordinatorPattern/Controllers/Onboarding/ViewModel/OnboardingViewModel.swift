@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class OnboardingViewModel: BaseViewModel {
+    private var provider : OnboardingProviding = Resolver.shared.resolve(OnboardingProviding.self)
     override init() {
-        //self.error.send(error)
     }
 }

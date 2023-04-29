@@ -36,7 +36,12 @@ private func initViewContainer() -> Container {
     container.register(IntroViewModel.self) { _ in
         IntroViewModel()
     }.inObjectScope(.custom)
-    
+    container.register(OnboardingProviding.self) { _ in
+       Onboardingprovider()
+    }.inObjectScope(.custom)
+    container.register(OnboardingViewModel.self) { _ in
+        OnboardingViewModel()
+    }.inObjectScope(.custom)
     return container
 }
 extension ObjectScope {

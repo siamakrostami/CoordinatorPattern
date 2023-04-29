@@ -9,23 +9,13 @@ import UIKit
 
 class OnboardingViewController: BaseViewController {
     // MARK: Internal
-
+    private var vm : OnboardingViewModel = Resolver.shared.resolve(OnboardingViewModel.self)
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    override func initializeViewModel() {
-        super.initializeViewModel()
-        self.viewModel = .init()
-    }
+    
     @IBAction func navigateToIntro(_ sender: Any) {
         self.coordinator?.navigateToIntro()
     }
-    
-    
-
-    // MARK: Private
-
-    private var viewModel: OnboardingViewModel?
 }
