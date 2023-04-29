@@ -1,31 +1,21 @@
 //
-//  IntroViewController.swift
-//  Architecture
+//  ModalViewController.swift
+//  CoordinatorPattern
 //
-//  Created by Siamak on 4/17/23.
+//  Created by Hossein Janati  on 4/29/23.
 //
 
 import UIKit
-import Combine
 
-class IntroViewController: BaseViewController {
-    
-   // private var viewModel: IntroViewModel?
-    private var vm : IntroViewModel = Resolver.shared.resolve(IntroViewModel.self)
+class ModalViewController: BaseViewController {
+    private var vm : ModalViewModel = Resolver.shared.resolve(ModalViewModel.self)
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func back(_ sender: Any) {
-        self.coordinator?.handleNavigation(style: .pop)
-    }
-    
-    @IBAction func openModal(_ sender: Any) {
-        self.coordinator?.openModalTest()
-    }
-    
+
     /*
     // MARK: - Navigation
 
