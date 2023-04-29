@@ -19,11 +19,12 @@ enum CoordinatorNavigation {
     case present(controller: UIViewController, presentationStyle: UIModalPresentationStyle, transitionStyle: UIModalTransitionStyle)
     case addChild(controller: UIViewController, to: UIViewController, presentationStyle: UIModalPresentationStyle, transitionStyle: UIModalTransitionStyle)
     case removeChild(controller: UIViewController)
+    case halfView(TransitioningDelegate: UIViewControllerTransitioningDelegate)
 }
 
 // MARK: - BaseCoordinator
 
-final class BaseCoordinator: NSObject {
+final class BaseCoordinator: NSObject, UIViewControllerTransitioningDelegate {
     // MARK: Lifecycle
 
     override init() {
@@ -79,6 +80,11 @@ final class BaseCoordinator: NSObject {
             to.addChildViewController(controller, toContainerView: to.view)
         case .removeChild(let controller):
             controller.removeViewControllerFromParentViewController()
+        case .halfView(let controller):
+            let slideVC = OverlayView()
+            slideVC.modalPresentationStyle = .custom
+            slideVC.transitioningDelegate = controller
+            self.navigationController.topViewController?.present(slideVC, animated: true, completion: nil)
         }
     }
 

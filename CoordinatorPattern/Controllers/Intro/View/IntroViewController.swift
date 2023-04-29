@@ -23,9 +23,9 @@ class IntroViewController: BaseViewController {
     }
     
     @IBAction func openModal(_ sender: Any) {
-        self.coordinator?.openModalTest()
+        self.coordinator?.openModalTest(TransitioningDelegate: self)
     }
-    
+ 
     /*
     // MARK: - Navigation
 

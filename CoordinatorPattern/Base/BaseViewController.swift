@@ -23,3 +23,9 @@ class BaseViewController: UIViewController, StoryboardInstantiable {
     func initializeViewModel() {}
 }
 
+extension BaseViewController :UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+

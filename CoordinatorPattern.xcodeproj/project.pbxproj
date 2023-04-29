@@ -11,11 +11,12 @@
 		74C365C529FD2D0B00F9817F /* Swinject_DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365C429FD2D0B00F9817F /* Swinject_DI.swift */; };
 		74C365C829FD2E0300F9817F /* IntroDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365C729FD2E0300F9817F /* IntroDI.swift */; };
 		74C365CB29FD305F00F9817F /* Onboarding_DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365CA29FD305F00F9817F /* Onboarding_DI.swift */; };
-		74C365CF29FD330A00F9817F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365CE29FD330A00F9817F /* ModalViewController.swift */; };
-		74C365D129FD331600F9817F /* ModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C365D029FD331600F9817F /* ModalViewController.storyboard */; };
 		74C365D629FD336900F9817F /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365D529FD336900F9817F /* ModalViewModel.swift */; };
 		74C365D929FD33AE00F9817F /* Modal_DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365D829FD33AE00F9817F /* Modal_DI.swift */; };
 		74C365DC29FD347B00F9817F /* ModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365DB29FD347B00F9817F /* ModalCoordinator.swift */; };
+		74C365DE29FD57DE00F9817F /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365DD29FD57DE00F9817F /* PresentationController.swift */; };
+		74C365E529FD58D500F9817F /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C365E329FD58D500F9817F /* OverlayView.xib */; };
+		74C365E629FD58D500F9817F /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C365E429FD58D500F9817F /* OverlayView.swift */; };
 		D5159E2929F6ADB20058FAE2 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5159E2829F6ADB20058FAE2 /* UINavigationController+Extension.swift */; };
 		D5FC175F29ED68DB005800F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC175E29ED68DB005800F4 /* AppDelegate.swift */; };
 		D5FC176329ED68DB005800F4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC176229ED68DB005800F4 /* OnboardingViewController.swift */; };
@@ -53,11 +54,12 @@
 		74C365C429FD2D0B00F9817F /* Swinject_DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swinject_DI.swift; sourceTree = "<group>"; };
 		74C365C729FD2E0300F9817F /* IntroDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroDI.swift; sourceTree = "<group>"; };
 		74C365CA29FD305F00F9817F /* Onboarding_DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_DI.swift; sourceTree = "<group>"; };
-		74C365CE29FD330A00F9817F /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		74C365D029FD331600F9817F /* ModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalViewController.storyboard; sourceTree = "<group>"; };
 		74C365D529FD336900F9817F /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
 		74C365D829FD33AE00F9817F /* Modal_DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal_DI.swift; sourceTree = "<group>"; };
 		74C365DB29FD347B00F9817F /* ModalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCoordinator.swift; sourceTree = "<group>"; };
+		74C365DD29FD57DE00F9817F /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		74C365E329FD58D500F9817F /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		74C365E429FD58D500F9817F /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		D5159E2829F6ADB20058FAE2 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		D5FC175B29ED68DB005800F4 /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FC175E29ED68DB005800F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		74C365CC29FD31EE00F9817F /* Modal */ = {
+		74C365CC29FD31EE00F9817F /* OverlayView */ = {
 			isa = PBXGroup;
 			children = (
 				74C365D729FD33A100F9817F /* DI */,
@@ -129,14 +131,14 @@
 				74C365D229FD334700F9817F /* ViewModel */,
 				74C365CD29FD32F700F9817F /* View */,
 			);
-			path = Modal;
+			path = OverlayView;
 			sourceTree = "<group>";
 		};
 		74C365CD29FD32F700F9817F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74C365CE29FD330A00F9817F /* ModalViewController.swift */,
-				74C365D029FD331600F9817F /* ModalViewController.storyboard */,
+				74C365E429FD58D500F9817F /* OverlayView.swift */,
+				74C365E329FD58D500F9817F /* OverlayView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				D5FC179429ED75F9005800F4 /* BaseCoordinator.swift */,
+				74C365DD29FD57DE00F9817F /* PresentationController.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -287,7 +290,7 @@
 			children = (
 				D5FC17A829ED7FD3005800F4 /* Onboarding */,
 				D5FC17A929ED7FDC005800F4 /* Intro */,
-				74C365CC29FD31EE00F9817F /* Modal */,
+				74C365CC29FD31EE00F9817F /* OverlayView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -452,9 +455,9 @@
 			files = (
 				D5FC17B729ED83BF005800F4 /* IntroViewController.storyboard in Resources */,
 				D5FC17AE29ED806F005800F4 /* OnboardingViewController.storyboard in Resources */,
+				74C365E529FD58D500F9817F /* OverlayView.xib in Resources */,
 				D5FC176B29ED68DC005800F4 /* LaunchScreen.storyboard in Resources */,
 				D5FC176829ED68DC005800F4 /* Assets.xcassets in Resources */,
-				74C365D129FD331600F9817F /* ModalViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,8 +481,9 @@
 				D5FC178D29ED69E8005800F4 /* BaseViewModel.swift in Sources */,
 				D5159E2929F6ADB20058FAE2 /* UINavigationController+Extension.swift in Sources */,
 				D5FC179229ED74E3005800F4 /* DependencyContainer.swift in Sources */,
-				74C365CF29FD330A00F9817F /* ModalViewController.swift in Sources */,
+				74C365DE29FD57DE00F9817F /* PresentationController.swift in Sources */,
 				D5FC17A229ED7D3D005800F4 /* BaseViewController.swift in Sources */,
+				74C365E629FD58D500F9817F /* OverlayView.swift in Sources */,
 				D5FC178529ED6937005800F4 /* RegistrationServices.swift in Sources */,
 				D5FC178229ED6937005800F4 /* NetworkRouter.swift in Sources */,
 				D5FC17B929ED83E1005800F4 /* IntroViewModel.swift in Sources */,
