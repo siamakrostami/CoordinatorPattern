@@ -6,26 +6,26 @@
 //
 
 import UIKit
+import Combine
 
 class IntroViewController: BaseViewController {
     
-    private var viewModel: IntroViewModel?
-
+   // private var viewModel: IntroViewModel?
+    private var vm : IntroViewModel = Resolver.shared.resolve(IntroViewModel.self)
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    override func initializeViewModel() {
-        super.initializeViewModel()
-        self.viewModel = .init()
-    }
-    
     @IBAction func back(_ sender: Any) {
         self.coordinator?.handleNavigation(style: .pop)
     }
     
+    @IBAction func openModal(_ sender: Any) {
+        self.coordinator?.openModalTest(TransitioningDelegate: self)
+    }
+ 
     /*
     // MARK: - Navigation
 

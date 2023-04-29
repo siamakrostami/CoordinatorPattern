@@ -12,7 +12,7 @@
         <!--Intro View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="IntroViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="IntroViewController" customModule="Architecture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="IntroViewController" customModule="CoordinatorPattern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,12 +25,24 @@
                                     <action selector="back:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="H7u-xa-idb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mab-HD-97S">
+                                <rect key="frame" x="121.66666666666667" y="421" width="149.66666666666663" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Modal"/>
+                                <connections>
+                                    <action selector="openModal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lqv-Cz-wUm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="Z54-Kj-CDZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="6p0-gg-0c6"/>
+                            <constraint firstItem="mab-HD-97S" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.0410798" id="BrY-EZ-khX"/>
+                            <constraint firstItem="mab-HD-97S" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="MRA-ll-DBV"/>
                             <constraint firstItem="Z54-Kj-CDZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="34" id="RWG-w1-2Bm"/>
+                            <constraint firstItem="mab-HD-97S" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="d74-KE-Wua"/>
+                            <constraint firstItem="mab-HD-97S" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.380831" id="x92-aU-qAu"/>
                         </constraints>
                     </view>
                 </viewController>
