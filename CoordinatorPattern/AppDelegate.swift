@@ -12,13 +12,13 @@ import Combine
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var coordinator: BaseCoordinator?
+    var environment = AppEnvironment.setup()
     var window: UIWindow?
     private var cancellableSet = Set<AnyCancellable>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DependencyContainer.shared.applicationFlow.send(.onboarding)
-        DependencyContainer.shared.test = "test flow"
+        environment.container.applicationDataContainer.applicationFlow.send(.onboarding)
         setupWindow()
         bindFlowChange()
         return true
@@ -36,13 +36,13 @@ extension AppDelegate {
     }
     
     private func bindFlowChange() {
-        DependencyContainer.shared.applicationFlow
+        environment.container.applicationDataContainer.applicationFlow
             .subscribe(on: RunLoop.main)
             .sink { [weak self] flow in
                 guard let `self` = self, let flow = flow else {
                     return
                 }
-                self.window?.rootViewController = self.coordinator?.setApplicationFlow(flow: flow)
+                self.window?.rootViewController = self.coordinator?.setApplicationFlow(flow: flow, dependency: environment.container)
                 self.window?.makeKeyAndVisible()
             }
             .store(in: &cancellableSet)

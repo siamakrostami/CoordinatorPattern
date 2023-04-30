@@ -33,9 +33,9 @@ final class BaseCoordinator: NSObject {
     // MARK: Public
     //MARK: - Set Root NavigationController
     @discardableResult
-    public func setApplicationFlow(flow: ApplicationFlow) -> UINavigationController? {
+    public func setApplicationFlow(flow: ApplicationFlow, dependency: DependencyContainer) -> UINavigationController? {
         self.navigationController.viewControllers.removeAll()
-        self.navigationController = UINavigationController(rootViewController: self.currentFlowViewController(flow: flow) ?? UIViewController())
+        self.navigationController = UINavigationController(rootViewController: self.currentFlowViewController(flow: flow, dependency: dependency) ?? UIViewController())
         self.navigationController.isNavigationBarHidden = true
         return self.navigationController
     }
@@ -84,12 +84,12 @@ final class BaseCoordinator: NSObject {
 
     // MARK: Private
 
-    private func currentFlowViewController(flow: ApplicationFlow) -> UIViewController? {
+    private func currentFlowViewController(flow: ApplicationFlow, dependency: DependencyContainer) -> UIViewController? {
         switch flow {
         case .onboarding:
-            return self.openOnboarding()
+            return self.openOnboarding(dependency: dependency)
         default:
-            return self.openIntro()
+            return self.openIntro(dependency: dependency)
         }
     }
 }

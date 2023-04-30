@@ -9,17 +9,12 @@ import UIKit
 
 class IntroViewController: BaseViewController {
     
-    private var viewModel: IntroViewModel?
+    var viewModel: IntroViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func initializeViewModel() {
-        super.initializeViewModel()
-        self.viewModel = .init()
     }
     
     @IBAction func back(_ sender: Any) {
