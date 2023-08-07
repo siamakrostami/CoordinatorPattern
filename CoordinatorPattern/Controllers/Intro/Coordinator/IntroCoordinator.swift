@@ -15,6 +15,7 @@ extension BaseCoordinator {
         let controller = IntroViewController.instantiateViewController()
         controller.viewModel = .init(dependency: dependency)
         controller.coordinator = self
+        controller.coordinator?.navigation.configureNavigationBar(controller: controller, leftItems: [.support], rightItems: [.back(type: .pop)])
         return controller
     }
 

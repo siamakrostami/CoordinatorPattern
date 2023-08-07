@@ -11,6 +11,8 @@
 		D55B10FC29FE4D5D00C4C982 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B10FB29FE4D5D00C4C982 /* AppEnvironment.swift */; };
 		D55B10FE29FE4D8600C4C982 /* ApplicationDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B10FD29FE4D8600C4C982 /* ApplicationDataContainer.swift */; };
 		D55B110029FE4DB700C4C982 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B10FF29FE4DB700C4C982 /* NetworkServices.swift */; };
+		D5D8048A2A80CD3200ED2E2D /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D804882A80CD3200ED2E2D /* NavigationBuilder.swift */; };
+		D5D8048B2A80CD3200ED2E2D /* BaseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D804892A80CD3200ED2E2D /* BaseNavigation.swift */; };
 		D5FC175F29ED68DB005800F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC175E29ED68DB005800F4 /* AppDelegate.swift */; };
 		D5FC176329ED68DB005800F4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC176229ED68DB005800F4 /* OnboardingViewController.swift */; };
 		D5FC176829ED68DC005800F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5FC176729ED68DC005800F4 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		D55B10FB29FE4D5D00C4C982 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		D55B10FD29FE4D8600C4C982 /* ApplicationDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDataContainer.swift; sourceTree = "<group>"; };
 		D55B10FF29FE4DB700C4C982 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		D5D804882A80CD3200ED2E2D /* NavigationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
+		D5D804892A80CD3200ED2E2D /* BaseNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigation.swift; sourceTree = "<group>"; };
 		D5FC175B29ED68DB005800F4 /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FC175E29ED68DB005800F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5FC176229ED68DB005800F4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D5D804872A80CD2600ED2E2D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D5D804892A80CD3200ED2E2D /* BaseNavigation.swift */,
+				D5D804882A80CD3200ED2E2D /* NavigationBuilder.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		D5FC175229ED68DB005800F4 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +123,7 @@
 		D5FC175D29ED68DB005800F4 /* CoordinatorPattern */ = {
 			isa = PBXGroup;
 			children = (
+				D5D804872A80CD2600ED2E2D /* Navigation */,
 				D5FC17BC29EE8052005800F4 /* ModuleMapper */,
 				D5FC179329ED75D8005800F4 /* Coordinator */,
 				D5FC179029ED74CD005800F4 /* DI */,
@@ -379,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5FC176329ED68DB005800F4 /* OnboardingViewController.swift in Sources */,
+				D5D8048A2A80CD3200ED2E2D /* NavigationBuilder.swift in Sources */,
 				D5FC178429ED6937005800F4 /* APIRequest.swift in Sources */,
 				D5FC178329ED6937005800F4 /* Retrier.swift in Sources */,
 				D5FC17C129EE80EF005800F4 /* String+Extensions.swift in Sources */,
@@ -398,6 +413,7 @@
 				D55B110029FE4DB700C4C982 /* NetworkServices.swift in Sources */,
 				D5FC178129ED6937005800F4 /* RequestHeaderBuilder.swift in Sources */,
 				D55B10FE29FE4D8600C4C982 /* ApplicationDataContainer.swift in Sources */,
+				D5D8048B2A80CD3200ED2E2D /* BaseNavigation.swift in Sources */,
 				D5FC17B529ED83B0005800F4 /* IntroViewController.swift in Sources */,
 				D5FC179529ED75F9005800F4 /* BaseCoordinator.swift in Sources */,
 				D55B10FC29FE4D5D00C4C982 /* AppEnvironment.swift in Sources */,
@@ -550,7 +566,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +597,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

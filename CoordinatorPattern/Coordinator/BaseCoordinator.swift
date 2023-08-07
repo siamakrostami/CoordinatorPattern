@@ -28,21 +28,21 @@ final class BaseCoordinator: NSObject {
 
     override init() {
         self.navigationController = .init()
+        self.navigation = .init()
     }
 
     // MARK: Public
     //MARK: - Set Root NavigationController
     @discardableResult
     public func setApplicationFlow(flow: ApplicationFlow, dependency: DependencyContainer) -> UINavigationController? {
-        self.navigationController.viewControllers.removeAll()
-        self.navigationController = UINavigationController(rootViewController: self.currentFlowViewController(flow: flow, dependency: dependency) ?? UIViewController())
-        self.navigationController.isNavigationBarHidden = true
+        self.navigationController = BaseNavigation(rootViewController: self.currentFlowViewController(flow: flow, dependency: dependency) ?? UIViewController())
         return self.navigationController
     }
 
     // MARK: Internal
 
     var navigationController: UINavigationController
+    var navigation: NavigationBuilder
 
     //MARK: - Handle All Navigation Styles
     func handleNavigation(style: CoordinatorNavigation) {
