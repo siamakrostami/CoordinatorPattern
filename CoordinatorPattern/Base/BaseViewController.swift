@@ -16,10 +16,8 @@ class BaseViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()
-        self.initializeViewModel()
     }
     
     func bind() {}
-    func initializeViewModel() {}
 }
 

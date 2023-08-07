@@ -28,21 +28,21 @@ final class BaseCoordinator: NSObject {
 
     override init() {
         self.navigationController = .init()
+        self.navigation = .init()
     }
 
     // MARK: Public
     //MARK: - Set Root NavigationController
     @discardableResult
-    public func setApplicationFlow(flow: ApplicationFlow) -> UINavigationController? {
-        self.navigationController.viewControllers.removeAll()
-        self.navigationController = UINavigationController(rootViewController: self.currentFlowViewController(flow: flow) ?? UIViewController())
-        self.navigationController.isNavigationBarHidden = true
+    public func setApplicationFlow(flow: ApplicationFlow, dependency: DependencyContainer) -> UINavigationController? {
+        self.navigationController = BaseNavigation(rootViewController: self.currentFlowViewController(flow: flow, dependency: dependency) ?? UIViewController())
         return self.navigationController
     }
 
     // MARK: Internal
 
     var navigationController: UINavigationController
+    var navigation: NavigationBuilder
 
     //MARK: - Handle All Navigation Styles
     func handleNavigation(style: CoordinatorNavigation) {
@@ -84,12 +84,12 @@ final class BaseCoordinator: NSObject {
 
     // MARK: Private
 
-    private func currentFlowViewController(flow: ApplicationFlow) -> UIViewController? {
+    private func currentFlowViewController(flow: ApplicationFlow, dependency: DependencyContainer) -> UIViewController? {
         switch flow {
         case .onboarding:
-            return self.openOnboarding()
+            return self.openOnboarding(dependency: dependency)
         default:
-            return self.openIntro()
+            return self.openIntro(dependency: dependency)
         }
     }
 }

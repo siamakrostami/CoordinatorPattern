@@ -15,17 +15,13 @@ class OnboardingViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func initializeViewModel() {
-        super.initializeViewModel()
-        self.viewModel = .init()
-    }
     @IBAction func navigateToIntro(_ sender: Any) {
-        self.coordinator?.navigateToIntro()
+        self.coordinator?.openIntroModal(dependency: viewModel.container)
     }
     
     
 
     // MARK: Private
 
-    private var viewModel: OnboardingViewModel?
+    var viewModel: OnboardingViewModel!
 }

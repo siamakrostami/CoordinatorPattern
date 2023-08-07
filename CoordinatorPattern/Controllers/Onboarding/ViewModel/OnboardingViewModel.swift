@@ -8,8 +8,17 @@
 import Foundation
 import Combine
 
-class OnboardingViewModel: BaseViewModel {
-    override init() {
-        //self.error.send(error)
+class OnboardingViewModel: BaseViewModel<DependencyContainer> {
+    
+    var container: DependencyContainer
+    
+    init(dependency: DependencyContainer){
+        self.container = dependency
+        super.init(dependency: self.container)
     }
+    
+    required init(dependency: Dependency) {
+        fatalError("init(dependency:) has not been implemented")
+    }
+
 }

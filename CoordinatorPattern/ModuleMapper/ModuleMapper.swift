@@ -17,18 +17,20 @@ enum ModuleMapperNavigation {
 
 // MARK: - ModuleMapper
 
-class ModuleMapper: BaseViewModel {
+class ModuleMapper {
     // MARK: Lifecycle
 
-    init(moduleName: String, coordinator: BaseCoordinator) {
+    init(moduleName: String, coordinator: BaseCoordinator, dependency: DependencyContainer) {
         self.moduleName = moduleName
         self.coordinator = coordinator
+        self.container = dependency
     }
 
     // MARK: Private
 
     private var moduleName: String
     private var coordinator: BaseCoordinator?
+    private var container: DependencyContainer
 }
 
 extension ModuleMapper {
